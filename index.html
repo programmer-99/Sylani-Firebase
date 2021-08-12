@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <title>Document</title>
+
+
+
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper #0d47a1 blue darken-4">
+            <a href="#" class="brand-logo center">NavBar</a>
+            <ul id="nav-mobile" class="right ">
+                <li><a class="modal-trigger" href="#modal2">Login</a></li>
+                <li><a class="modal-trigger" href="#modal1">SignUp</a></li>
+                <li><a onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal 1 SignUp Form-->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up</h4>
+            <form autocomplete="off" onsubmit="signup(event)">
+                <input type="email" id="signUpEmail" placeholder="email">
+                <input type="password" id="signUpPassword" placeholder="password">
+                <button class="btn waves-effect #0d47a1 blue darken-4" type="submit">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+     <!-- Modal 2 Loging Form-->
+     <div id="modal2" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4>
+            <form autocomplete="off" onsubmit="login(event)">
+                <input type="email" id="loginEmail" placeholder="email">
+                <input type="password" id="loginPassword" placeholder="password">
+                <button class="btn waves-effect #0d47a1 blue darken-4" type="submit">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+    <!-- <script src="app.js"></script> -->
+  
+
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+    </script>
+
+    <script>
+        // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDvitWsCVaF5B7KcTbtV2CcPA0CmPGkkFs",
+    authDomain: "sylani-firebase.firebaseapp.com",
+    projectId: "sylani-firebase",
+    storageBucket: "sylani-firebase.appspot.com",
+    messagingSenderId: "846217289880",
+    appId: "1:846217289880:web:3b1092ca2a817a0782f0ed"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+    </script>
+  <script src="authentication.js"></script>
+
+</body>
+
+</html>
