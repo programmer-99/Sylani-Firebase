@@ -21,9 +21,9 @@
         <div class="nav-wrapper #0d47a1 blue darken-4">
             <a href="#" class="brand-logo center">NavBar</a>
             <ul id="nav-mobile" class="right ">
-                <li><a class="modal-trigger" href="#modal2">Login</a></li>
-                <li><a class="modal-trigger" href="#modal1">SignUp</a></li>
-                <li><a onclick="logout()">Logout</a></li>
+                <li id="loginli"><a  class="modal-trigger" href="#modal2">Login</a></li>
+                <li id="signupli"><a class="modal-trigger" href="#modal1">SignUp</a></li>
+                <li id="logoutli"><a onclick="logout()">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -58,14 +58,47 @@
 
 <div class="center">
     <h1>Your Account Details</h1>
+    <img id="proimg" class="circle" src="./images/noimage.png" alt="noimage" style="width:20% ;height:auto ;">
     <div class="userDetails"></div>
 </div>
+<br>
+<br>
+<div class="container">
+    <table class="highlight" id="table" style="display: none;">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>speciality</th>
+              <th>Experience</th>
+              <th>portfolio</th>
+        
+          </tr>
+        </thead>
+    
+        <tbody id="tbody">
+         
+        </tbody>
+      </table>
+</div>
+
+        
 
 <!-- edit profile -->
 
 <div id="modal3" class="modal">
     <div class="modal-content">
         <h4>Edit Your Detaila</h4>
+        <div class="file-field input-field">
+            <div class="btn #0d47a1 blue darken-4">
+              <span>File</span>
+              <input type="file" accept="image/*" onchange="uploadImage(event)">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
         <form autocomplete="off" id="editProfile" onsubmit="updateUserProfile(event)">
             <input type="email" name="profileEmail" placeholder="email">
             <input type="text" name="name" placeholder="name">
@@ -86,6 +119,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
 
    
 
