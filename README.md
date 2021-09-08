@@ -1,2 +1,2 @@
 # Sylani-Firebase
-Firebase,Firestore,Storage
+Firebase Authentication,Firestore ,Storage
